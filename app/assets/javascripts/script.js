@@ -62,9 +62,9 @@ function init() {
   $( document ).ready(function() {
     console.log( "ready!" );
     //pseudo random generator seed
-    var seed = "hello";
+    var seed = "water";
     console.log(seed);
-    // Math.seedrandom(seed);
+    Math.seedrandom(seed);
     do {
       tries++;
       generateMatches();
