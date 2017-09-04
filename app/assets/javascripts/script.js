@@ -1,43 +1,57 @@
 //init variables
 var dan = {
   name: "Daniel",
-  slug: "beast",
+  slug: "mufasa",
   available_matches: null,
   match: null
 };
 var jen = {
   name: "Jenny",
-  slug: "esmeralda",
+  slug: "sarabi",
   available_matches: null,
   match: null
 };
 var tiff = {
   name: "Tiffany",
-  slug: "bambi",
+  slug: "rafiki",
   available_matches: null,
   match: null
 };
 var judy = {
   name: "Judy",
-  slug: "rapunzel",
+  slug: "zazu",
   available_matches: null,
   match: null
 };
 var kun = {
   name: "Kun",
-  slug: "simba",
+  slug: "timon",
+  available_matches: null,
+  match: null
+};
+var caleb = {
+  name: "Caleb",
+  slug: "pumbaa",
+  available_matches: null,
+  match: null
+};
+var baby = {
+  name: "Baby",
+  slug: "nala",
   available_matches: null,
   match: null
 };
 
 //hard-code allowed matches
-judy.available_matches = [tiff, dan, jen];
-kun.available_matches = [tiff, dan, jen];
-tiff.available_matches = [jen, dan, judy, kun];
-jen.available_matches = [tiff, judy, kun];
-dan.available_matches = [tiff, judy, kun];
+judy.available_matches = [tiff, dan, caleb, baby];
+kun.available_matches = [tiff, jen, caleb, baby];
+tiff.available_matches = [jen, dan, judy, baby];
+caleb.available_matches = [jen, dan, judy, kun, baby];
+jen.available_matches = [judy, kun, caleb];
+dan.available_matches = [tiff, kun, caleb];
+baby.available_matches = [tiff, judy, kun, caleb];
 
-var people = [dan, jen, tiff, judy, kun];
+var people = [dan, jen, tiff, judy, kun, caleb, baby];
 var tries = 0;
 var hashvalue;
 
@@ -46,7 +60,7 @@ showDebug();
 
 function init() {
   $( document ).ready(function() {
-    console.log( "ready! kjkk" );
+    console.log( "ready!" );
     //pseudo random generator seed
     var seed = "hello";
     console.log(seed);
@@ -65,7 +79,7 @@ function generateMatches() {
   for (i = 0; i < people.length; i++) {
     var j = getRandomInt(0, people[i].available_matches.length - 1);
     people[i].match = people[i].available_matches[j];
-    // console.log("Tried to match " + people[i].name + " to " + people[i].available_matches[j].name);
+    console.log("Tried to match " + people[i].name + " to " + people[i].available_matches[j].name);
   }
 };
 
