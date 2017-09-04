@@ -1,2 +1,57 @@
-<h1>Hello</h1>
-<p>I'm the home</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Secret Santa</title>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+  <%= stylesheet_link_tag "bootstrap.min.css" %>
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <link href="https://fonts.googleapis.com/css?family=Arima+Madurai|Open+Sans" rel="stylesheet">
+  <%= stylesheet_link_tag "styles.css" %>
+
+  <link rel="icon" type="image/png" href="assets/images/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="assets/images/favicon-16x16.png" sizes="16x16" />
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="background col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3" style="background-image:url(<%= asset_path('background.png')%>)">
+        <div id="intro">
+          <h5 id="intro-user"></h5>
+          <h1 id="intro-match"></h1>
+        </div>
+      </div>
+
+      <div id="debugging">
+        <h4>Debugging</h4>
+        <ul>
+          <li>Hash: <span id="hash-value"></span></li>
+          <br>
+          <li>Match 1: <span id="person0"></span></li>
+          <li>Match 2: <span id="person1"></span></li>
+          <li>Match 3: <span id="person2"></span></li>
+          <li>Match 4: <span id="person3"></span></li>
+          <li>Match 5: <span id="person4"></span></li>
+          <br>
+          <li>Duplicates?: <span id="duplicates"></span></li>
+          <br>
+          <li>Extra loops?: <span id="loops"></span></li>
+          <br>
+          <li>Number of tries: <span id="tries"></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
