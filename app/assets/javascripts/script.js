@@ -56,19 +56,19 @@ var tries = 0;
 var hashvalue;
 
 init();
-showDebug();
+//showDebug();
 
 function init() {
   $( document ).ready(function() {
     console.log( "ready!" );
     //pseudo random generator seed
-    var seed = "water";
+    var seed = "moo";
     console.log(seed);
     Math.seedrandom(seed);
     do {
       tries++;
       generateMatches();
-    } while (hasSelfAssignments() || hasExtraLoops());
+    } while (hasSelfAssignments()/* || hasExtraLoops()*/);
     console.log(tries);
     showResults();
   });
